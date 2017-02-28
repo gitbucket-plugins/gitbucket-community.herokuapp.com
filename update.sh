@@ -6,7 +6,7 @@ GITBUCKET_VERSION=4.10
 GITBUCKET_ANNOUNCE_PLUGIN_VERSION=1.6.0
 GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.4.0
 GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.3.0
-GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.5.0
+GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.10.0
 GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION=1.0.1
 GITBUCKET_PAGES_PLUGIN_VERSION=0.7
 GITBUCKET_NETWORK_PLUGIN_VERSION=1.3
@@ -61,7 +61,7 @@ fi
 if [ ! -f plugins/gitbucket-commitgraphs-plugin-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-commitgraphs-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-commitgraphs-plugin.jar && wget -q -O plugins/gitbucket-commitgraphs-plugin-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-commitgraphs-plugin/releases/download/$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION/gitbucket-commitgraphs-plugin_2.11-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar && echo done.
+    echo -- downloading gitbucket-commitgraphs-plugin.jar && wget -q -O plugins/gitbucket-commitgraphs-plugin-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-commitgraphs-plugin/releases/download/$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION/gitbucket-commitgraphs-plugin_2.12-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-asciidoctor-plugin-$GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION.jar ]
