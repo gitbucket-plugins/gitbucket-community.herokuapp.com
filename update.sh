@@ -5,7 +5,7 @@ GITBUCKET_VERSION=4.10
 
 GITBUCKET_ANNOUNCE_PLUGIN_VERSION=1.6.0
 GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.4.0
-GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.3.0
+GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.10.0
 GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.10.0
 GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION=1.0.1
 GITBUCKET_PAGES_PLUGIN_VERSION=0.7
@@ -15,6 +15,7 @@ GITBUCKET_RST_PLUGIN_VERSION=0.1.0
 GITBUCKET_BUGSPOTS_PLUGIN_VERSION=4.5.0
 GITBUCKET_GIST_PLUGIN_VERSION=4.6.0
 GITBUCKET_EXPLORER_PLUGIN_VERSION=2.0.0
+GITBUCKET_PLANTUML_PLUGIN_VERSION=1.0.0
 
 echo downloading...
 echo -- gitbucket.war.md5 && wget -q -O gitbucket.war.md5 https://github.com/gitbucket/gitbucket/releases/download/$GITBUCKET_VERSION/gitbucket.war.md5 && echo done.
@@ -55,7 +56,7 @@ fi
 if [ ! -f plugins/gitbucket-desktopnotify-plugin-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-desktopnotify-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-desktopnotify-plugin.jar && wget -q -O plugins/gitbucket-desktopnotify-plugin-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-desktopnotify-plugin/releases/download/$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION/gitbucket-desktopnotify-plugin_2.11-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar && echo done.
+    echo -- downloading gitbucket-desktopnotify-plugin.jar && wget -q -O plugins/gitbucket-desktopnotify-plugin-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-desktopnotify-plugin/releases/download/$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION/gitbucket-desktopnotify-plugin_2.12-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-commitgraphs-plugin-$GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION.jar ]
@@ -110,6 +111,12 @@ if [ ! -f plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.j
 then
     rm plugins/gitbucket-explorer-plugin*.jar > /dev/null 2>&1
     echo -- downloading gitbucket-explorer-plugin.jar && wget -q -O plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar https://github.com/tomoki1207/gitbucket-explorer-plugin/releases/download/$GITBUCKET_EXPLORER_PLUGIN_VERSION/gitbucket-explorer-plugin_2.12-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar && echo done.
+fi
+
+if [ ! -f plugins/gitbucket-plantuml-plugin-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar ]
+then
+    rm plugins/gitbucket-plantuml-plugin*.jar > /dev/null 2>&1
+    echo -- downloading gitbucket-plantuml-plugin.jar && wget -q -O plugins/gitbucket-plantuml-plugin-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar https://github.com/nus/gitbucket-plantuml-plugin/releases/download/v$GITBUCKET_PLANTUML_PLUGIN_VERSION/gitbucket-plantuml-plugin-assembly-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar && echo done.
 fi
 
 echo
