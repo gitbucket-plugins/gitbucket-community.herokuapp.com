@@ -8,7 +8,7 @@ GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.4.0
 GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.10.0
 GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.10.0
 GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION=1.0.1
-GITBUCKET_PAGES_PLUGIN_VERSION=0.7
+GITBUCKET_PAGES_PLUGIN_VERSION=1.0
 GITBUCKET_NETWORK_PLUGIN_VERSION=1.3
 GITBUCKET_EMOJI_PLUGIN_VERSION=4.4.0
 GITBUCKET_RST_PLUGIN_VERSION=0.1.0
@@ -74,7 +74,7 @@ fi
 if [ ! -f plugins/gitbucket-pages-plugin-$GITBUCKET_PAGES_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-pages-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-pages-plugin.jar && wget -q -O plugins/gitbucket-pages-plugin-$GITBUCKET_PAGES_PLUGIN_VERSION.jar https://github.com/yaroot/gitbucket-pages-plugin/releases/download/v$GITBUCKET_PAGES_PLUGIN_VERSION/pages-plugin_2.11-$GITBUCKET_PAGES_PLUGIN_VERSION.jar && echo done.
+    echo -- downloading gitbucket-pages-plugin.jar && wget -q -O plugins/gitbucket-pages-plugin-$GITBUCKET_PAGES_PLUGIN_VERSION.jar https://github.com/gitbucket/gitbucket-pages-plugin/releases/download/v$GITBUCKET_PAGES_PLUGIN_VERSION/pages.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-network-plugin-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar ]
