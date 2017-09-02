@@ -1,21 +1,54 @@
 #!/bin/bash
 
 
-GITBUCKET_VERSION=4.12.1
+GITBUCKET_VERSION=4.16.0
 
+# 1
 GITBUCKET_ANNOUNCE_PLUGIN_VERSION=1.6.0
+
+# 2
 GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.4.0
+
+# 3
 GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.10.0
+
+# 4 -> gist plug-in: is part of the WAR now
+
+# 5
 GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.12.0
+
+# 6
 GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION=1.0.2
-GITBUCKET_PAGES_PLUGIN_VERSION=1.1
-GITBUCKET_NETWORK_PLUGIN_VERSION=1.4
-GITBUCKET_EMOJI_PLUGIN_VERSION=4.4.0
-GITBUCKET_RST_PLUGIN_VERSION=0.4.0
+
+# 7
 GITBUCKET_BUGSPOTS_PLUGIN_VERSION=4.11.0
-GITBUCKET_GIST_PLUGIN_VERSION=4.8.0
+
+# 8 -> pages plug-in: is part of the WAR now
+
+# 9
+GITBUCKET_NETWORK_PLUGIN_VERSION=1.4
+
+# 10 -> emoji plug-in: is part of the WAR now
+
+# 11
+GITBUCKET_RST_PLUGIN_VERSION=0.4.0
+
+# 12
 GITBUCKET_EXPLORER_PLUGIN_VERSION=3.0.0
-GITBUCKET_PLANTUML_PLUGIN_VERSION=1.1.2
+
+# 13 -> fess plug-in: requires more config instructions
+
+# 14
+GITBUCKET_PLANTUML_PLUGIN_VERSION=1.3.0
+
+# 15
+GITBUCKET_MONITORING_PLUGIN_VERSION=1.0.0
+
+# 16 -> HTML5 Media plug-in: needs some examples
+
+# 17 -> Jupyter plug-in: how to install Jypyter and make it work on Heroku?
+
+# 18 -> Email Notifications plug-in: is part of the WAR now
 
 echo downloading...
 echo -- gitbucket.war.md5 && wget -q -O gitbucket.war.md5 https://github.com/gitbucket/gitbucket/releases/download/$GITBUCKET_VERSION/gitbucket.war.md5 && echo done.
@@ -71,22 +104,10 @@ then
     echo -- downloading gitbucket-asciidoctor-plugin.jar && wget -q -O plugins/gitbucket-asciidoctor-plugin-$GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION.jar https://github.com/asciidoctor/gitbucket-asciidoctor-plugin/releases/download/$GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION/gitbucket-4.0-asciidoctor-plugin-assembly-$GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION.jar && echo done.
 fi
 
-if [ ! -f plugins/gitbucket-pages-plugin-$GITBUCKET_PAGES_PLUGIN_VERSION.jar ]
-then
-    rm plugins/gitbucket-pages-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-pages-plugin.jar && wget -q -O plugins/gitbucket-pages-plugin-$GITBUCKET_PAGES_PLUGIN_VERSION.jar https://github.com/gitbucket/gitbucket-pages-plugin/releases/download/v$GITBUCKET_PAGES_PLUGIN_VERSION/pages.jar && echo done.
-fi
-
 if [ ! -f plugins/gitbucket-network-plugin-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-network-plugin*.jar > /dev/null 2>&1
     echo -- downloading gitbucket-network-plugin.jar && wget -q -O plugins/gitbucket-network-plugin-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar https://github.com/mrkm4ntr/gitbucket-network-plugin/releases/download/$GITBUCKET_NETWORK_PLUGIN_VERSION/gitbucket-network-plugin_2.12-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar && echo done.
-fi
-
-if [ ! -f plugins/gitbucket-emoji-plugin-$GITBUCKET_EMOJI_PLUGIN_VERSION.jar ]
-then
-    rm plugins/gitbucket-emoji-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-emoji-plugin.jar && wget -q -O plugins/gitbucket-emoji-plugin-$GITBUCKET_EMOJI_PLUGIN_VERSION.jar https://github.com/gitbucket/gitbucket-emoji-plugin/releases/download/$GITBUCKET_EMOJI_PLUGIN_VERSION/gitbucket-emoji-plugin_2.12-$GITBUCKET_EMOJI_PLUGIN_VERSION.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-rst-plugin-$GITBUCKET_RST_PLUGIN_VERSION.jar ]
@@ -101,12 +122,6 @@ then
     echo -- downloading gitbucket-bugspots-plugin.jar && wget -q -O plugins/gitbucket-bugspots-plugin-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-bugspots-plugin/releases/download/$GITBUCKET_BUGSPOTS_PLUGIN_VERSION/gitbucket-bugspots-plugin_2.11-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar && echo done.
 fi
 
-if [ ! -f plugins/gitbucket-gist-plugin-$GITBUCKET_GIST_PLUGIN_VERSION.jar ]
-then
-    rm plugins/gitbucket-gist-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-gist-plugin.jar && wget -q -O plugins/gitbucket-gist-plugin-$GITBUCKET_GIST_PLUGIN_VERSION.jar https://github.com/gitbucket/gitbucket-gist-plugin/releases/download/$GITBUCKET_GIST_PLUGIN_VERSION/gitbucket-gist-plugin_2.12-$GITBUCKET_GIST_PLUGIN_VERSION.jar && echo done.
-fi
-
 if [ ! -f plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-explorer-plugin*.jar > /dev/null 2>&1
@@ -117,6 +132,12 @@ if [ ! -f plugins/gitbucket-plantuml-plugin-$GITBUCKET_PLANTUML_PLUGIN_VERSION.j
 then
     rm plugins/gitbucket-plantuml-plugin*.jar > /dev/null 2>&1
     echo -- downloading gitbucket-plantuml-plugin.jar && wget -q -O plugins/gitbucket-plantuml-plugin-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar https://github.com/nus/gitbucket-plantuml-plugin/releases/download/v$GITBUCKET_PLANTUML_PLUGIN_VERSION/gitbucket-plantuml-plugin-assembly-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar && echo done.
+fi
+
+if [ ! -f plugins/gitbucket-plantuml-plugin-$GITBUCKET_MONITORING_PLUGIN_VERSION.jar ]
+then
+    rm plugins/gitbucket-monitorting-plugin*.jar > /dev/null 2>&1
+    echo -- downloading gitbucket-monitorting-plugin && wget -q -O plugins/gitbucket-monitorting-plugin-$GITBUCKET_MONITORING_PLUGIN_VERSION.jar https://github.com/YoshinoriN/gitbucket-monitoring-plugin/releases/download/v$GITBUCKET_MONITORING_PLUGIN_VERSION/gitbucket-monitorting-plugin_2.12-$GITBUCKET_MONITORING_PLUGIN_VERSION.jar && echo done.
 fi
 
 echo
