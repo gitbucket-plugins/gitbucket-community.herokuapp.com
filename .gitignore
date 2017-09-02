@@ -1,2 +1,12 @@
 gitbucket.war.md5
 /.project
+.DS_Store
+tmp/
+/plugins/.installed
+/plugins/.repository
+/plugins/gitbucket-notifications*
+/plugins/gitbucket-pages*
+/plugins/gitbucket-gist*
+/plugins/gitbucket-emoji*
+data.mv.*
+database.conf
