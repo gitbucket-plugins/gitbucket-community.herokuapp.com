@@ -2,6 +2,7 @@ gitbucket.war.md5
 /.project
 .DS_Store
 tmp/
+gist/
 /plugins/.installed
 /plugins/.repository
 /plugins/gitbucket-notifications*

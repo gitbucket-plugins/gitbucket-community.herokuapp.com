@@ -29,8 +29,9 @@ Thus on push, it will automatically redeploy with the new content.
 - commit & push the changes
 
 ## Try it locally
-Execute `run.sh` to start GitBucket locally in the current directory,
-with the current downloded plug-ins.
+
+Execute `./run.sh` from the current directory to start GitBucket locally ( http://localhost:8080/gitbucket/ ), with `GITBUCKET_HOME`  as the current directory: it will be using all the currently downloaded plug-ins.
+
 
 ## Errors
 
