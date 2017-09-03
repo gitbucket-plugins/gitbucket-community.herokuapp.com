@@ -4,10 +4,10 @@
 GITBUCKET_VERSION=4.16.0
 
 # 1
-GITBUCKET_ANNOUNCE_PLUGIN_VERSION=1.6.0
+GITBUCKET_ANNOUNCE_PLUGIN_VERSION=1.7.0
 
 # 2
-GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.4.0
+GITBUCKET_H2_BACKUP_PLUGIN_VERSION=1.5.0
 
 # 3
 GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION=4.10.0
@@ -21,7 +21,7 @@ GITBUCKET_COMMITGRAPHS_PLUGIN_VERSION=4.12.0
 GITBUCKET_ASCIIDOCTOR_PLUGIN_VERSION=1.0.2
 
 # 7
-GITBUCKET_BUGSPOTS_PLUGIN_VERSION=4.11.0
+# GITBUCKET_BUGSPOTS_PLUGIN_VERSION=4.11.0
 
 # 8 -> pages plug-in: is part of the WAR now
 
@@ -31,7 +31,7 @@ GITBUCKET_NETWORK_PLUGIN_VERSION=1.4
 # 10 -> emoji plug-in: is part of the WAR now
 
 # 11
-GITBUCKET_RST_PLUGIN_VERSION=0.4.0
+# GITBUCKET_RST_PLUGIN_VERSION=0.4.0
 
 # 12
 GITBUCKET_EXPLORER_PLUGIN_VERSION=3.0.0
@@ -77,13 +77,13 @@ mkdir plugins > /dev/null 2>&1
 if [ ! -f plugins/gitbucket-announce-plugin-$GITBUCKET_ANNOUNCE_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-announce-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-announce-plugin.jar && wget -q -O plugins/gitbucket-announce-plugin-$GITBUCKET_ANNOUNCE_PLUGIN_VERSION.jar https://github.com/gitbucket-plugins/gitbucket-announce-plugin/releases/download/$GITBUCKET_ANNOUNCE_PLUGIN_VERSION/gitbucket-announce-plugin.jar && echo done.
+    echo -- downloading gitbucket-announce-plugin.jar && wget -q -O plugins/gitbucket-announce-plugin-$GITBUCKET_ANNOUNCE_PLUGIN_VERSION.jar https://github.com/gitbucket-plugins/gitbucket-announce-plugin/releases/download/$GITBUCKET_ANNOUNCE_PLUGIN_VERSION/gitbucket-announce-plugin_2.12-$GITBUCKET_ANNOUNCE_PLUGIN_VERSION.jar && echo done.
 fi
 
-if [ ! -f plugins/gitbucket-h2-backup-$GITBUCKET_H2_BACKUP_PLUGIN_VERSION.jar ]
+if [ ! -f plugins/gitbucket-h2-backup-plugin-$GITBUCKET_H2_BACKUP_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-h2-backup*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-h2-backup.jar && wget -q -O plugins/gitbucket-h2-backup-$GITBUCKET_H2_BACKUP_PLUGIN_VERSION.jar https://github.com/gitbucket-plugins/gitbucket-h2-backup-plugin/releases/download/$GITBUCKET_H2_BACKUP_PLUGIN_VERSION/gitbucket-h2-backup-plugin.jar && echo done.
+    echo -- downloading gitbucket-h2-backup.jar && wget -q -O plugins/gitbucket-h2-backup-plugin-$GITBUCKET_H2_BACKUP_PLUGIN_VERSION.jar https://github.com/gitbucket-plugins/gitbucket-h2-backup-plugin/releases/download/$GITBUCKET_H2_BACKUP_PLUGIN_VERSION/gitbucket-h2-backup-plugin_2.12-$GITBUCKET_H2_BACKUP_PLUGIN_VERSION.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-desktopnotify-plugin-$GITBUCKET_DESKTOPNOTIFY_PLUGIN_VERSION.jar ]
@@ -110,17 +110,17 @@ then
     echo -- downloading gitbucket-network-plugin.jar && wget -q -O plugins/gitbucket-network-plugin-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar https://github.com/mrkm4ntr/gitbucket-network-plugin/releases/download/$GITBUCKET_NETWORK_PLUGIN_VERSION/gitbucket-network-plugin_2.12-$GITBUCKET_NETWORK_PLUGIN_VERSION.jar && echo done.
 fi
 
-if [ ! -f plugins/gitbucket-rst-plugin-$GITBUCKET_RST_PLUGIN_VERSION.jar ]
-then
-    rm plugins/gitbucket-rst-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-rst-plugin.jar && wget -q -O plugins/gitbucket-rst-plugin-$GITBUCKET_RST_PLUGIN_VERSION.jar https://github.com/amuramatsu/gitbucket-rst-plugin/releases/download/$GITBUCKET_RST_PLUGIN_VERSION/gitbucket-4.0-rst-plugin-assembly-$GITBUCKET_RST_PLUGIN_VERSION.jar && echo done.
-fi
+# if [ ! -f plugins/gitbucket-rst-plugin-$GITBUCKET_RST_PLUGIN_VERSION.jar ]
+# then
+#    rm plugins/gitbucket-rst-plugin*.jar > /dev/null 2>&1
+#    echo -- downloading gitbucket-rst-plugin.jar && wget -q -O plugins/gitbucket-rst-plugin-$GITBUCKET_RST_PLUGIN_VERSION.jar https://github.com/amuramatsu/gitbucket-rst-plugin/releases/download/$GITBUCKET_RST_PLUGIN_VERSION/gitbucket-4.0-rst-plugin-assembly-$GITBUCKET_RST_PLUGIN_VERSION.jar && echo done.
+#fi
 
-if [ ! -f plugins/gitbucket-bugspots-plugin-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar ]
-then
-    rm plugins/gitbucket-bugspots-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-bugspots-plugin.jar && wget -q -O plugins/gitbucket-bugspots-plugin-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-bugspots-plugin/releases/download/$GITBUCKET_BUGSPOTS_PLUGIN_VERSION/gitbucket-bugspots-plugin_2.11-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar && echo done.
-fi
+# if [ ! -f plugins/gitbucket-bugspots-plugin-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar ]
+# then
+#    rm plugins/gitbucket-bugspots-plugin*.jar > /dev/null 2>&1
+#    echo -- downloading gitbucket-bugspots-plugin.jar && wget -q -O plugins/gitbucket-bugspots-plugin-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar https://github.com/yoshiyoshifujii/gitbucket-bugspots-plugin/releases/download/$GITBUCKET_BUGSPOTS_PLUGIN_VERSION/gitbucket-bugspots-plugin_2.11-$GITBUCKET_BUGSPOTS_PLUGIN_VERSION.jar && echo done.
+#fi
 
 if [ ! -f plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar ]
 then
