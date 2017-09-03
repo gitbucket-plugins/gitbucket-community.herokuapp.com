@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+rm -R gist > /dev/null 2>&1
+rm -R backup > /dev/null 2>&1
 rm data.mv.db > /dev/null 2>&1
 rm database.conf > /dev/null 2>&1
 rm -R plugins/.installed > /dev/null 2>&1
