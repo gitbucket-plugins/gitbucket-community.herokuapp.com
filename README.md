@@ -28,15 +28,13 @@ Thus on push, it will automatically redeploy with the new content.
 - run `./update.sh`
 - commit & push the changes
 
-## Try it locally
+## Try it locally first
 
 Execute `./run.sh` from the current directory to start GitBucket locally ( http://localhost:8080/gitbucket/ ), with `GITBUCKET_HOME`  as the current directory: it will be using all the currently downloaded plug-ins.
 
 
 ## Errors
 
-The following plug-ins doesn't seem to work correctly with the latest (4.16) version of GitBucket:
- - H2 Backup plugin - #2
+The following plug-ins doesn't seem to work correctly now with the latest (4.16.0) version of GitBucket:
  - Bugspots plugin - #7 - throws ClassNotFoundException
  - RST plugin - #11 - throws ClassNotFoundException
- - Explorer plugin - #12

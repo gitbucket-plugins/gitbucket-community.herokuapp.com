@@ -4,6 +4,7 @@ gitbucket.war.md5
 tmp/
 gist/
 backup/
+repositories/
 /plugins/.installed
 /plugins/.repository
 /plugins/gitbucket-notifications*
@@ -11,4 +12,5 @@ backup/
 /plugins/gitbucket-gist*
 /plugins/gitbucket-emoji*
 data.mv.*
+data.trace.db
 database.conf

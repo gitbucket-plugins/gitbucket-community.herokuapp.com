@@ -34,7 +34,7 @@ GITBUCKET_NETWORK_PLUGIN_VERSION=1.4
 # GITBUCKET_RST_PLUGIN_VERSION=0.4.0
 
 # 12
-GITBUCKET_EXPLORER_PLUGIN_VERSION=3.0.0
+GITBUCKET_EXPLORER_PLUGIN_VERSION=4.0.0
 
 # 13 -> fess plug-in: requires more config instructions
 
@@ -125,7 +125,7 @@ fi
 if [ ! -f plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar ]
 then
     rm plugins/gitbucket-explorer-plugin*.jar > /dev/null 2>&1
-    echo -- downloading gitbucket-explorer-plugin.jar && wget -q -O plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar https://github.com/tomoki1207/gitbucket-explorer-plugin/releases/download/$GITBUCKET_EXPLORER_PLUGIN_VERSION/gitbucket-explorer-plugin_2.12-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar && echo done.
+    echo -- downloading gitbucket-explorer-plugin.jar && wget -q -O plugins/gitbucket-explorer-plugin-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar https://github.com/gitbucket-plugins/gitbucket-explorer-plugin/releases/download/$GITBUCKET_EXPLORER_PLUGIN_VERSION/gitbucket-explorer-plugin_2.12-$GITBUCKET_EXPLORER_PLUGIN_VERSION.jar && echo done.
 fi
 
 if [ ! -f plugins/gitbucket-plantuml-plugin-$GITBUCKET_PLANTUML_PLUGIN_VERSION.jar ]
